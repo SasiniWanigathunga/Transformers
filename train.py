@@ -58,4 +58,4 @@ for iter in range(max_iters):
     optimizer.step()
 
 context = torch.zeros((1, 1), dtype=torch.long, device=device)
-print(decode(model.generate(idx = context), max_new_tokens=1000)[0].tolist())
+print(decode(model.generate(idx = context, max_new_tokens=1000))[0].tolist())
