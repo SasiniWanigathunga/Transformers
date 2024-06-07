@@ -46,7 +46,7 @@ def estimate_loss():
     model.train()
     return out
 
-for iter in range(2):
+for iter in range(max_iters):
     # every once in a while evaluate the loss on train and val sets
     if iter % eval_interval == 0:
         losses = estimate_loss()
