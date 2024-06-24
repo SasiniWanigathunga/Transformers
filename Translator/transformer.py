@@ -18,8 +18,7 @@ class Transformer(nn.Module):
                  english_to_index, 
                  START_TOKEN, 
                  END_TOKEN, 
-                 PAD_TOKEN, 
-                 device):
+                 PAD_TOKEN ):
         super().__init__()
         self.encoder = Encoder(d_model, num_heads, ffn_hidden_size, num_layers, dropout, max_sequence_length, english_to_index, START_TOKEN, END_TOKEN, PAD_TOKEN)
         self.decoder = Decoder(d_model, num_heads, ffn_hidden_size, dropout, num_layers, max_sequence_length, sinhala_to_index, START_TOKEN, END_TOKEN, PAD_TOKEN)

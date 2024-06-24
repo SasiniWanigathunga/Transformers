@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from config import device
 
 def scaled_dot_product_attention(query, key, value, mask=None):
     # q, k, v: (30, 8, 200, 64)
@@ -31,7 +32,7 @@ class PositionalEncoding(nn.Module):
         return PE
     
 class SentenceEmbedding(nn.Module):
-    def __init__(self, max_sequence_length, d_model, language_to_index, START_TOKEN, END_TOKEN, PAD_TOKEN, device):
+    def __init__(self, max_sequence_length, d_model, language_to_index, START_TOKEN, END_TOKEN, PAD_TOKEN):
         super().__init__()
         self.max_sequence_length = max_sequence_length
         self.d_model = d_model
